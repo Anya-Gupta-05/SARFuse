@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  sarfuse:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./processed_tiles:/app/processed_tiles   # mounts your tiler output dir
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 4G       # YOLO + rasterio need headroom
