@@ -44,22 +44,18 @@ def slice_satellite_data(url: str = "https://raw.githubusercontent.com/rasterio/
     except Exception as e:
         return {"pipeline_status": "Failed", "error": str(e)}
 
-# --- THE NEW ENDPOINT ---
 @app.get("/detect")
 def run_target_detection():
     """
     This endpoint grabs the file we just sliced and passes it to the YOLOv8 ML pipeline.
     """
     try:
-        # 1. Define the exact path to the file we just saved
         file_path = os.path.join(OUTPUT_DIR, "inference_ready_tile.tif")
         
-        # 2. Check if the file actually exists before running ML
         if not os.path.exists(file_path):
             return {"error": "Tile not found. Please run the /slice endpoint first."}
         
-        # 3. Trigger Claude's ML pipeline on the saved file
-        # (This assumes Claude updated pipeline.py to handle the OBB fix)
+      
         run(Path(file_path))
         
         return {"status": "Success", "message": "Inference complete. Check terminal or results folder."}
