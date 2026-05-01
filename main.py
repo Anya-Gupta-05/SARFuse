@@ -3,10 +3,6 @@ from fastapi import FastAPI
 import rasterio
 from rasterio.windows import Window
 from pathlib import Path
-
-# --- IMPORT CLAUDE'S PIPELINE ---
-# Based on your previous terminal logs, Claude's main function in pipeline.py 
-# is called 'run' and it accepts a file path.
 from inference.pipeline import run 
 
 app = FastAPI(title="Sentinel Geo-Tiler API")
