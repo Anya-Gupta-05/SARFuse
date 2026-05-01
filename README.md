@@ -4,7 +4,6 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat&logo=fastapi&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat&logo=pytorch&logoColor=white)
 ![Python](https://img.shields.io/badge/Python_3.11-3776AB?style=flat&logo=python&logoColor=white)
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat)
 
 **Dual-stream SAR + Optical fusion microservice for satellite object detection.**
 
